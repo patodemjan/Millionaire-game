@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Question</title>
+</head>
+<body>
+    <h2>Add a New Question</h2>
+
+    <form action="#" th:action="@{/api/questions}" th:object="${question}" method="post">
+        <div>
+            <label for="text">Question Text:</label>
+            <input type="text" id="text" th:field="*{text}" required/>
+        </div>
+        
+        <div>
+            <label for="optionA">Option A:</label>
+            <input type="text" id="optionA" th:field="*{optionA}" required/>
+        </div>
+
+        <div>
+            <label for="optionB">Option B:</label>
+            <input type="text" id="optionB" th:field="*{optionB}" required/>
+        </div>
+
+        <div>
+            <label for="optionC">Option C:</label>
+            <input type="text" id="optionC" th:field="*{optionC}" required/>
+        </div>
+
+        <div>
+            <label for="optionD">Option D:</label>
+            <input type="text" id="optionD" th:field="*{optionD}" required/>
+        </div>
+
+        <div>
+            <label for="correctOption">Correct Option (A/B/C/D):</label>
+            <input type="text" id="correctOption" th:field="*{correctOption}" required/>
+        </div>
+
+        <div>
+            <label for="language">Language:</label>
+            <select id="language" th:field="*{language}">
+                <option value="en">English</option>
+                <option value="de">German</option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit">Add Question</button>
+        </div>
+    </form>
+
+</body>
+</html>

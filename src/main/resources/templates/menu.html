@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Millionaire Game</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1 th:text="#{title.menu}">Millionaire</h1>
+    <ul>
+        <li><a th:href="@{/newgame}" th:text="#{menu.newgame}">New Game</a></li>
+        <li><a th:href="@{/setgame}" th:text="#{menu.setgame}">Set Game</a></li>
+        <li><a th:href="@{/about}" th:text="#{menu.about}">About</a></li>
+        <li><a th:href="@{/exit}" th:text="#{menu.exit}">Exit</a></li>
+    </ul>
+</body>
+</html>

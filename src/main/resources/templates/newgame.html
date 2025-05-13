@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Game</title>
+</head>
+<body>
+    <h2 th:text="#{newgame.title}">New Game</h2>
+
+    <div th:if="${question != null}">
+        <p th:text="${question.text}">Question text here</p>
+
+        <ul>
+            <li th:each="entry : ${question.options.entrySet()}"
+                th:text="${entry.key + ': ' + entry.value}">A: Option</li>
+        </ul>
+    </div>
+
+    <div th:if="${question == null}">
+        <p>No questions available in this language.</p>
+    </div>
+
+    <a href="/" th:text="#{menu.back}">Back to menu</a>
+</body>
+</html>

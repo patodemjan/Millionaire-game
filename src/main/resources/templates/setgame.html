@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Set Game</title>
+</head>
+<body>
+    <h2 th:text="#{setgame.title}">Add New Question</h2>
+
+    <form th:action="@{/setgame}" th:object="${questionForm}" method="post">
+        <label>Question:</label>
+        <input type="text" th:field="*{text}" required /><br/>
+
+        <label>Option A:</label>
+        <input type="text" th:field="*{optionA}" required /><br/>
+
+        <label>Option B:</label>
+        <input type="text" th:field="*{optionB}" required /><br/>
+
+        <label>Option C:</label>
+        <input type="text" th:field="*{optionC}" required /><br/>
+
+        <label>Option D:</label>
+        <input type="text" th:field="*{optionD}" required /><br/>
+
+        <label>Correct Answer (A–D):</label>
+        <input type="text" th:field="*{correctOption}" required /><br/>
+
+        <label>Language (en / de):</label>
+        <input type="text" th:field="*{language}" required /><br/>
+
+        <button type="submit">Save</button>
+    </form>
+
+    <div th:if="${success}">
+        <p>Question saved!</p>
+    </div>
+
+    <a href="/" th:text="#{menu.back}">Back to Menu</a>
+</body>
+</html>
